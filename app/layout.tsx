@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 };
 
 import SlidingFooter from './components/SlidingFooter';
+import BottomNavigation from './components/BottomNavigation';
 
 export default function RootLayout({
   children,
@@ -30,6 +31,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <BottomNavigation />
         <SlidingFooter />
       </body>
     </html>

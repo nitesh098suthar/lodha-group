@@ -28,7 +28,7 @@ export default function BuildingCarousel() {
   };
 
   return (
-    <div className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden rounded-lg shadow-lg">
+    <div className="relative w-full h-[40vh] md:h-[50vh] overflow-hidden rounded-xl shadow-lg">
       {/* Carousel Images */}
       <div
         className="flex transition-transform duration-500 ease-in-out h-full"
@@ -43,10 +43,10 @@ export default function BuildingCarousel() {
               className="object-cover"
               priority={building.id === buildings[0].id}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#8B6914]/80 via-[#B8860B]/40 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 text-white">
-              <h2 className="text-3xl md:text-5xl font-bold mb-2">{building.name}</h2>
-              <p className="text-lg md:text-xl">{building.description}</p>
+              <h2 className="text-3xl md:text-5xl font-bold mb-2 drop-shadow-lg">{building.name}</h2>
+              <p className="text-lg md:text-xl drop-shadow-md">{building.description}</p>
             </div>
           </div>
         ))}
@@ -55,7 +55,7 @@ export default function BuildingCarousel() {
       {/* Navigation Arrows */}
       <button
         onClick={goToPrevious}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all z-10"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-[#D4AF37]/90 hover:bg-[#D4AF37] text-white p-2 rounded-full shadow-lg transition-all z-10"
         aria-label="Previous slide"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,7 +64,7 @@ export default function BuildingCarousel() {
       </button>
       <button
         onClick={goToNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all z-10"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-[#D4AF37]/90 hover:bg-[#D4AF37] text-white p-2 rounded-full shadow-lg transition-all z-10"
         aria-label="Next slide"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@ export default function BuildingCarousel() {
             key={index}
             onClick={() => goToSlide(index)}
             className={`h-2 md:h-3 rounded-full transition-all ${
-              index === currentIndex ? 'w-8 md:w-10 bg-white' : 'w-2 md:w-3 bg-white/50'
+              index === currentIndex ? 'w-8 md:w-10 bg-[#D4AF37]' : 'w-2 md:w-3 bg-white/50'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

@@ -11,12 +11,12 @@ html {
 body {
   margin: 0;
   padding: 0;
-  padding-bottom: 60px; /* Space for mobile footer trigger */
+  padding-bottom: 70px; /* Space for bottom navigation */
 }
 
 @media (min-width: 768px) {
   body {
-    padding-bottom: 0; /* Remove padding on desktop */
+    padding-bottom: 80px; /* Space for desktop bottom navigation */
   }
 }
 

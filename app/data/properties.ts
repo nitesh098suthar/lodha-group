@@ -155,5 +155,43 @@ export const properties: Property[] = [
     ],
     amenities: ['Swimming Pool', 'Gym', 'Parking', 'Security', 'Rooftop Garden'],
     available: true
+  },
+  {
+    id: '7',
+    name: 'Elegant 2BHK Apartment',
+    building: 'Lodha Upper Thane',
+    type: 'apartment',
+    price: 6800000,
+    area: 1350,
+    bedrooms: 2,
+    bathrooms: 2,
+    location: 'Thane, Maharashtra',
+    description: 'Spacious 2BHK apartment with premium finishes and modern amenities. Features include large balconies, modular kitchen, and designer bathrooms. Perfect for growing families.',
+    images: [
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1560449752-915f6785a5e5?w=800&h=600&fit=crop'
+    ],
+    amenities: ['Swimming Pool', 'Gym', 'Parking', 'Security', 'Garden', 'Clubhouse'],
+    available: true
+  },
+  {
+    id: '8',
+    name: 'Luxury 5BHK Villa',
+    building: 'Lodha Amara',
+    type: 'villa',
+    price: 35000000,
+    area: 4500,
+    bedrooms: 5,
+    bathrooms: 4,
+    location: 'Mumbai, Maharashtra',
+    description: 'Ultra-luxury 5BHK villa with private pool and landscaped gardens. Features include home automation, private theater, wine cellar, and premium Italian marble throughout. The ultimate luxury living experience.',
+    images: [
+      'https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&h=600&fit=crop'
+    ],
+    amenities: ['Private Pool', 'Private Garden', 'Home Theater', 'Wine Cellar', 'Gym', 'Parking', 'Security', 'Home Automation'],
+    available: true
   }
 ];

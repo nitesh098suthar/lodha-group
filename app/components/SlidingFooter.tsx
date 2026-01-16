@@ -10,7 +10,7 @@ export default function SlidingFooter() {
       {/* Footer Trigger Button - Always visible */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-0 left-0 right-0 z-40 bg-blue-600 text-white py-3 px-4 shadow-lg hover:bg-blue-700 transition-colors md:hidden"
+        className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-white py-3 px-4 shadow-lg hover:from-[#B8860B] hover:to-[#8B6914] transition-all md:hidden"
         aria-label="Toggle footer"
       >
         <div className="flex items-center justify-between">
@@ -44,7 +44,7 @@ export default function SlidingFooter() {
                 onClick={() => setIsOpen(false)}
               >
                 <div className="flex items-center gap-3">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                   </svg>
                   <span className="text-lg font-medium">Home</span>
@@ -57,7 +57,7 @@ export default function SlidingFooter() {
                 onClick={() => setIsOpen(false)}
               >
                 <div className="flex items-center gap-3">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                   <span className="text-lg font-medium">Properties</span>
@@ -70,7 +70,7 @@ export default function SlidingFooter() {
                 onClick={() => setIsOpen(false)}
               >
                 <div className="flex items-center gap-3">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                   <span className="text-lg font-medium">Call Us</span>
@@ -83,7 +83,7 @@ export default function SlidingFooter() {
                 onClick={() => setIsOpen(false)}
               >
                 <div className="flex items-center gap-3">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   <span className="text-lg font-medium">Email Us</span>
@@ -96,7 +96,7 @@ export default function SlidingFooter() {
                 onClick={() => setIsOpen(false)}
               >
                 <div className="flex items-center gap-3">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <span className="text-lg font-medium">About Us</span>
@@ -121,7 +121,7 @@ export default function SlidingFooter() {
       </div>
 
       {/* Desktop Footer - Always visible on larger screens */}
-      <footer className="hidden md:block bg-gray-900 text-white py-8">
+      <footer className="hidden md:block bg-gradient-to-r from-[#8B6914] to-[#B8860B] text-white py-8">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>

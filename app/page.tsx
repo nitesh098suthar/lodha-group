@@ -1,8 +1,13 @@
 import BuildingCarousel from './components/BuildingCarousel';
 import PropertyCard from './components/PropertyCard';
 import { properties } from './data/properties';
+import Link from 'next/link';
+import { getCurrentUser } from '@/lib/auth-utils';
+import { logout } from './actions/auth';
 
-export default function Home() {
+export default async function Home() {
+  const user = await getCurrentUser();
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -10,7 +15,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl md:text-3xl font-bold text-blue-600">Lodha Group</h1>
-            <nav className="hidden md:flex gap-6">
+            <nav className="hidden md:flex gap-6 items-center">
               <a href="/" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Home</a>
               <a href="#properties" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Properties</a>
               <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">About</a>

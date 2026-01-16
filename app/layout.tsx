@@ -17,8 +17,7 @@ export const metadata: Metadata = {
   description: "Discover luxury homes and apartments by Lodha Group. Premium real estate properties in Mumbai and Thane.",
 };
 
-import SlidingFooter from './components/SlidingFooter';
-import BottomNavigation from './components/BottomNavigation';
+import ConditionalFooter from './components/ConditionalFooter';
 
 export default function RootLayout({
   children,
@@ -31,8 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-        <BottomNavigation />
-        <SlidingFooter />
+        <ConditionalFooter />
       </body>
     </html>
   );

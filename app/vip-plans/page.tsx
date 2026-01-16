@@ -13,95 +13,105 @@ export default function VIPPlansPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20 md:pb-24">
-      {/* Top Banner */}
-      <div className="bg-gradient-to-r from-[#D4AF37] via-[#B8860B] to-[#8B6914] text-white">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div className="min-h-screen bg-[#F8F9FA] pb-24 md:pb-28">
+      {/* Premium Header - Gold Theme */}
+      <div className="bg-[#B8860B] pb-16 pt-8 rounded-b-[2rem] relative overflow-hidden shadow-xl">
+        {/* Background Effects */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#DAA520] opacity-20 rounded-full blur-[80px] translate-x-1/2 -translate-y-1/2"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex items-center justify-between mb-8">
+            <Link href="/" className="flex items-center gap-2 text-white hover:text-white/90 transition-colors bg-white/10 px-3 py-1.5 rounded-full backdrop-blur-sm">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
-              <span className="text-sm">Back</span>
+              <span className="text-sm font-medium">Back</span>
             </Link>
             <div className="text-right">
-              <h1 className="text-2xl md:text-3xl font-bold">LODHA</h1>
-              <p className="text-xs opacity-90">VIP Plans</p>
+              <h1 className="text-2xl font-serif font-bold text-white drop-shadow-sm">LODHA GROUP</h1>
+              <p className="text-white/90 text-xs tracking-widest uppercase">vip plans</p>
             </div>
+          </div>
+          
+          <div className="text-center mt-6 pb-2">
+             <h2 className="text-3xl font-medium text-white mb-2 drop-shadow-md">Investment <span className="text-white font-serif italic text-4xl">Opportunities</span></h2>
+             <p className="text-white/90 text-sm max-w-xs mx-auto">Choose from our exclusive range of high-yield investment plans.</p>
           </div>
         </div>
       </div>
 
-      {/* Navigation Tabs */}
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-10">
-        <div className="container mx-auto px-4">
-          <div className="flex gap-1">
+      {/* Tabs */}
+      <div className="container mx-auto px-6 -mt-8 relative z-10 mb-10">
+        <div className="bg-white p-2 rounded-2xl shadow-xl flex gap-3 border border-gray-100">
             <Link
               href="/"
-              className="flex-1 py-3 px-4 bg-gray-100 text-gray-600 font-semibold rounded-t-lg text-sm hover:bg-gray-200 transition-colors text-center"
+              className="flex-1 py-3 px-4 rounded-xl text-sm font-bold text-gray-500 hover:bg-gray-50 transition-colors text-center"
             >
               Properties
             </Link>
             <button
               onClick={() => setActiveTab('vip')}
-              className="flex-1 py-3 px-4 bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-white font-semibold rounded-t-lg text-sm"
+              className="flex-1 py-3 px-4 bg-[#B8860B] text-white font-bold rounded-xl text-sm shadow-md ring-2 ring-[#B8860B]/20"
             >
               VIP Plans
             </button>
-          </div>
         </div>
       </div>
 
-      {/* VIP Plans Listing */}
-      <section className="container mx-auto px-4 py-4">
-        <div className="space-y-4">
+      {/* Plans Grid */}
+      <section className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {vipPlans.map((plan) => (
-            <div key={plan.id} className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              {/* Plan Image */}
-              <div className="relative w-full h-64 md:h-80 overflow-hidden">
+            <div key={plan.id} className="group bg-white rounded-[2rem] shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 relative">
+               {/* Image Section */}
+              <div className="relative w-full h-64 overflow-hidden">
                 <Image
                   src={plan.image}
                   alt={plan.name}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute top-3 right-3 bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-white px-3 py-1 rounded-lg text-xs font-bold shadow-lg">
-                  Limit: {plan.limit}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90" />
+                
+                <div className="absolute top-4 right-4">
+                  <span className="bg-[#D4AF37] text-[#1A1A1A] px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                    Limit: {plan.limit}
+                  </span>
+                </div>
+
+                <div className="absolute bottom-4 left-4 right-4">
+                   <h3 className="text-xl font-bold text-white mb-1">{plan.name}</h3>
+                   <div className="h-1 w-12 bg-[#D4AF37] rounded-full"></div>
                 </div>
               </div>
 
-              {/* Plan Title */}
-              <div className="px-4 pt-4 pb-2">
-                <h3 className="text-xl md:text-2xl font-bold text-gray-800">
-                  {plan.name}
-                </h3>
-              </div>
-
-              {/* Info Boxes */}
-              <div className="px-4 pb-4">
-                <div className="grid grid-cols-4 gap-2 mb-4">
-                  <div className="bg-white border border-gray-200 rounded-lg p-3 text-center shadow-sm">
-                    <div className="text-base md:text-lg font-bold text-[#D4AF37] mb-1">{formatPrice(plan.price)}</div>
-                    <div className="text-xs text-gray-600">Price</div>
-                  </div>
-                  <div className="bg-white border border-gray-200 rounded-lg p-3 text-center shadow-sm">
-                    <div className="text-base md:text-lg font-bold text-[#D4AF37] mb-1">{formatPrice(plan.daily)}</div>
-                    <div className="text-xs text-gray-600">Daily</div>
-                  </div>
-                  <div className="bg-white border border-gray-200 rounded-lg p-3 text-center shadow-sm">
-                    <div className="text-base md:text-lg font-bold text-[#D4AF37] mb-1">{formatPrice(plan.total)}</div>
-                    <div className="text-xs text-gray-600">Total</div>
-                  </div>
-                  <div className="bg-white border border-gray-200 rounded-lg p-3 text-center shadow-sm">
-                    <div className="text-base md:text-lg font-bold text-[#D4AF37] mb-1">{plan.days}</div>
-                    <div className="text-xs text-gray-600">Days</div>
-                  </div>
+               {/* Details */}
+              <div className="p-6">
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                   <div className="bg-gray-50 rounded-2xl p-3 text-center group-hover:bg-[#1A1A1A]/5 transition-colors">
+                      <div className="text-[#D4AF37] text-lg font-bold">{formatPrice(plan.price)}</div>
+                      <div className="text-[10px] text-gray-400 uppercase font-medium">Entry Price</div>
+                   </div>
+                   <div className="bg-gray-50 rounded-2xl p-3 text-center group-hover:bg-[#1A1A1A]/5 transition-colors">
+                      <div className="text-[#1A1A1A] text-lg font-bold">{plan.days} Days</div>
+                      <div className="text-[10px] text-gray-400 uppercase font-medium">Duration</div>
+                   </div>
+                   <div className="bg-gray-50 rounded-2xl p-3 text-center group-hover:bg-[#1A1A1A]/5 transition-colors">
+                      <div className="text-[#1A1A1A] text-lg font-bold">{formatPrice(plan.daily)}</div>
+                      <div className="text-[10px] text-gray-400 uppercase font-medium">Daily Income</div>
+                   </div>
+                   <div className="bg-gray-50 rounded-2xl p-3 text-center group-hover:bg-[#1A1A1A]/5 transition-colors">
+                      <div className="text-[#D4AF37] text-lg font-bold">{formatPrice(plan.total)}</div>
+                      <div className="text-[10px] text-gray-400 uppercase font-medium">Total Return</div>
+                   </div>
                 </div>
-
-                {/* Buy Now Button */}
-                <button className="w-full bg-gradient-to-r from-[#D4AF37] to-[#B8860B] hover:from-[#B8860B] hover:to-[#8B6914] text-white py-3 px-4 rounded-xl font-semibold transition-all duration-300 shadow-lg text-sm md:text-base">
-                  Buy now ({formatPrice(plan.price)})
-                </button>
+                
+                {/* Invest Badge */}
+                <div className="w-full bg-[#1A1A1A] text-white py-4 px-4 rounded-2xl font-bold shadow-lg text-center cursor-default group-hover:scale-[1.02] transition-transform flex justify-center items-center gap-2">
+                   <span className="uppercase tracking-wider text-xs text-[#D4AF37]">Invest Now</span>
+                   <span className="text-white/20">|</span>
+                   <span>{formatPrice(plan.price)}</span>
+                </div>
               </div>
             </div>
           ))}

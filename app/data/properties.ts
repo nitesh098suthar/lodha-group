@@ -51,7 +51,7 @@ export const properties: Property[] = [
     area: 1850,
     bedrooms: 3,
     bathrooms: 2,
-    location: 'Mumbai, Maharashtra',
+    location: 'Worli, Mumbai',
     description: 'Beautifully designed 3BHK apartment with modern interiors and premium finishes. Features large windows offering natural light, spacious living area, and a well-equipped kitchen. Located in a prime area with excellent connectivity.',
     images: [
       'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop',
@@ -70,7 +70,7 @@ export const properties: Property[] = [
     area: 3500,
     bedrooms: 4,
     bathrooms: 3,
-    location: 'Thane, Maharashtra',
+    location: 'Jubilee Hills, Hyderabad',
     description: 'Stunning 4BHK villa with private garden and modern architecture. Features include a private terrace, home automation, premium Italian marble flooring, and designer kitchens. Perfect for families seeking luxury living.',
     images: [
       'https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=800&h=600&fit=crop',
@@ -89,7 +89,7 @@ export const properties: Property[] = [
     area: 1200,
     bedrooms: 2,
     bathrooms: 2,
-    location: 'Mumbai, Maharashtra',
+    location: 'Whitefield, Bangalore',
     description: 'Compact yet spacious 2BHK apartment ideal for young professionals and small families. Features modern design, efficient space utilization, and all essential amenities. Great investment opportunity.',
     images: [
       'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop',
@@ -108,7 +108,7 @@ export const properties: Property[] = [
     area: 5000,
     bedrooms: 5,
     bathrooms: 4,
-    location: 'Mumbai, Maharashtra',
+    location: 'Golf Course Road, Gurgaon',
     description: 'Exclusive penthouse with panoramic city views and private terrace. Features include a private elevator, home theater, wine cellar, and premium finishes throughout. The epitome of luxury living.',
     images: [
       'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop',
@@ -127,7 +127,7 @@ export const properties: Property[] = [
     area: 1950,
     bedrooms: 3,
     bathrooms: 2,
-    location: 'Mumbai, Maharashtra',
+    location: 'Koregaon Park, Pune',
     description: 'Contemporary 3BHK apartment with smart home features and premium amenities. Features open-plan living, modern kitchen with appliances, and spacious bedrooms. Located in a well-connected area.',
     images: [
       'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop',
@@ -146,7 +146,7 @@ export const properties: Property[] = [
     area: 650,
     bedrooms: 1,
     bathrooms: 1,
-    location: 'Mumbai, Maharashtra',
+    location: 'Andheri West, Mumbai',
     description: 'Perfect starter home or investment property. Well-designed 1BHK with all modern amenities. Compact yet comfortable, ideal for singles or couples. Great location with easy access to business districts.',
     images: [
       'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&h=600&fit=crop',
@@ -165,7 +165,7 @@ export const properties: Property[] = [
     area: 1350,
     bedrooms: 2,
     bathrooms: 2,
-    location: 'Thane, Maharashtra',
+    location: 'Salt Lake City, Kolkata',
     description: 'Spacious 2BHK apartment with premium finishes and modern amenities. Features include large balconies, modular kitchen, and designer bathrooms. Perfect for growing families.',
     images: [
       'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop',
@@ -184,7 +184,7 @@ export const properties: Property[] = [
     area: 4500,
     bedrooms: 5,
     bathrooms: 4,
-    location: 'Mumbai, Maharashtra',
+    location: 'Banjara Hills, Hyderabad',
     description: 'Ultra-luxury 5BHK villa with private pool and landscaped gardens. Features include home automation, private theater, wine cellar, and premium Italian marble throughout. The ultimate luxury living experience.',
     images: [
       'https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=800&h=600&fit=crop',

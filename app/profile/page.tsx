@@ -63,7 +63,6 @@ export default function ProfilePage() {
   const router = useRouter();
 
   const [bankDetails, setBankDetails] = useState<any>(null);
-  const [balance] = useState(0);
   const [recharge] = useState(0);
   const [totalIncome] = useState(0);
   const [user, setUser] = useState<any>(null);
@@ -140,21 +139,21 @@ export default function ProfilePage() {
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#8B6508] opacity-10 rounded-full blur-[50px] -translate-x-1/2 translate-y-1/2"></div>
 
         <div className="container mx-auto px-6 relative z-10">
-           <div className="flex items-center gap-4">
-              <div className="relative">
-                 <div className="w-16 h-16 rounded-full bg-white text-[#B8860B] text-2xl font-bold flex items-center justify-center shadow-lg border-2 border-white/30">
-                   {user?.fullName?.[0]?.toUpperCase() || 'U'}
-                 </div>
-                 <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-400 border-2 border-white rounded-full"></div>
+          <div className="flex items-center gap-4">
+            <div className="relative">
+              <div className="w-16 h-16 rounded-full bg-white text-[#B8860B] text-2xl font-bold flex items-center justify-center shadow-lg border-2 border-white/30">
+                {user?.fullName?.[0]?.toUpperCase() || 'U'}
               </div>
-              <div>
-                 <h1 className="text-2xl font-bold text-white mb-1 drop-shadow-sm">{user?.fullName || 'User Name'}</h1>
-                 <div className="flex items-center gap-2">
-                    <span className="text-white/90 text-sm">{user?.mobile || '+91 XXXXX XXXXX'}</span>
-                    <span className="bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[10px] text-white font-medium border border-white/20">VIP Member</span>
-                 </div>
+              <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-400 border-2 border-white rounded-full"></div>
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold text-white mb-1 drop-shadow-sm">{user?.fullName || 'User Name'}</h1>
+              <div className="flex items-center gap-2">
+                <span className="text-white/90 text-sm">{user?.mobile || '+91 XXXXX XXXXX'}</span>
+                <span className="bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[10px] text-white font-medium border border-white/20">VIP Member</span>
               </div>
-           </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -165,7 +164,7 @@ export default function ProfilePage() {
             <div className="flex-1 text-center px-2">
               <div className="text-xs text-gray-500 font-medium uppercase tracking-wider mb-1">Balance</div>
               <div className="text-xl md:text-2xl font-bold text-[#1A1A1A]">
-                {formatPrice(balance)}
+                {formatPrice(user?.balance || 0)}
               </div>
             </div>
             <div className="flex-1 text-center px-2">
@@ -187,7 +186,7 @@ export default function ProfilePage() {
         {bankDetails && (
           <div className="bg-gradient-to-r from-[#1A1A1A] to-[#2C2C2C] rounded-2xl shadow-lg p-5 mb-6 text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#D4AF37] opacity-10 rounded-full blur-2xl transform translate-x-1/2 -translate-y-1/2"></div>
-            
+
             <div className="flex justify-between items-start mb-6 relative z-10">
               <div>
                 <p className="text-white/60 text-xs uppercase tracking-widest mb-1">Account Holder</p>
@@ -197,7 +196,7 @@ export default function ProfilePage() {
                 <BankIcon />
               </div>
             </div>
-            
+
             <div className="flex justify-between items-end relative z-10">
               <div>
                 <p className="text-white/60 text-xs uppercase tracking-widest mb-1">Account Number</p>
@@ -223,11 +222,10 @@ export default function ProfilePage() {
                     className="w-full flex items-center justify-between p-4 rounded-xl hover:bg-red-50 transition-colors group"
                   >
                     <div className="flex items-center gap-4">
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
-                        item.danger 
-                          ? 'bg-red-50 text-red-500 group-hover:bg-red-100' 
-                          : 'bg-gray-50 text-gray-600 group-hover:bg-[#D4AF37]/10 group-hover:text-[#D4AF37]'
-                      }`}>
+                      <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${item.danger
+                        ? 'bg-red-50 text-red-500 group-hover:bg-red-100'
+                        : 'bg-gray-50 text-gray-600 group-hover:bg-[#D4AF37]/10 group-hover:text-[#D4AF37]'
+                        }`}>
                         {item.icon}
                       </div>
                       <span className={`font-medium ${item.danger ? 'text-red-600' : 'text-gray-700'}`}>
@@ -258,7 +256,7 @@ export default function ProfilePage() {
             })}
           </div>
         </div>
-        
+
         {/* App Version */}
         <div className="text-center mt-6 text-gray-400 text-xs">
           <p>Version 2.4.0</p>

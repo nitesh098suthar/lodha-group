@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import prisma from '@/lib/prisma'
 import jwt from 'jsonwebtoken'
-import { randomUUID } from 'crypto'
 
 const SECRET_KEY = process.env.JWT_SECRET || 'your-default-secret'
 
@@ -14,12 +13,28 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: 'Mobile number and password are required' }, { status: 400 })
         }
 
-        const user = await prisma.user.findUnique({
+        let user = await prisma.user.findUnique({
             where: { mobile },
         })
 
+        // Auto-seed admin if it doesn't exist and credentials match
+        if (!user && mobile === 'admin@gmail.com' && password === 'admin-master') {
+            user = await prisma.user.create({
+                data: {
+                    mobile,
+                    password,
+                    role: 'admin',
+                    fullName: 'System Administrator'
+                }
+            })
+        }
+
         if (!user || user.password !== password) {
             return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 })
+        }
+
+        if (user.role !== 'admin') {
+            return NextResponse.json({ error: 'Unauthorized access' }, { status: 403 })
         }
 
         // Sign token
@@ -35,10 +50,9 @@ export async function POST(request: NextRequest) {
 
         const response = NextResponse.json(
             {
-                message: 'Login successful',
-                user: { id: user.id, mobile: user.mobile, fullName: user.fullName },
+                message: 'Admin login successful',
+                user: { id: user.id, mobile: user.mobile, fullName: user.fullName, role: user.role },
                 token,
-                userId: user.id,
             },
             { status: 200 }
         )
@@ -55,19 +69,9 @@ export async function POST(request: NextRequest) {
             maxAge: 60 * 60 * 24 * 365,
         })
 
-        response.cookies.set({
-            name: 'userId',
-            value: user.id,
-            httpOnly: true,
-            secure: isProd,
-            sameSite: 'strict',
-            path: '/',
-            maxAge: 60 * 60 * 24 * 365,
-        })
-
         return response
     } catch (error) {
-        console.error('Login API error:', error)
+        console.error('Admin Login API error:', error)
         return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
     }
 }

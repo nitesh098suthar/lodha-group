@@ -35,11 +35,11 @@ const InfoIcon = () => (
   </svg>
 );
 
-const DownloadIcon = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-  </svg>
-);
+// const DownloadIcon = () => (
+//   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+//   </svg>
+// );
 
 const LogoutIcon = () => (
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,10 +127,10 @@ export default function ProfilePage() {
     { icon: <WalletIcon />, label: 'Income Records', href: '/profile/income' },
     { icon: <BankIcon />, label: 'Withdraw Records', href: '/profile/withdrawals' },
     { icon: <InfoIcon />, label: 'About us', href: '/about' },
-    { icon: <DownloadIcon />, label: 'Download App', href: '#' },
+    // { icon: <DownloadIcon />, label: 'Download App', href: '#' },
     { icon: <LogoutIcon />, label: 'Log out', action: 'logout', danger: true },
   ];
-
+  
   return (
     <div className="min-h-screen bg-[#F8F9FA] pb-24 md:pb-28">
       {/* Premium Header - Gold Theme */}
@@ -259,7 +259,6 @@ export default function ProfilePage() {
 
         {/* App Version */}
         <div className="text-center mt-6 text-gray-400 text-xs">
-          <p>Version 2.4.0</p>
           <p className="mt-1">Lodha Group © 2026</p>
         </div>
       </div>

@@ -19,7 +19,7 @@ export default function RechargePage() {
   return (
     <div className="min-h-screen bg-gray-50 pb-20 md:pb-24">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#D4AF37] via-[#B8860B] to-[#8B6914] text-white">
+      <div className="bg-gradient-to-r from-[#D4AF37] via-[#B8860B] to-[#8B6914] text-white mb-4">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center">
             <Link href="/" className="mr-4">

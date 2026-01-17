@@ -31,7 +31,7 @@ export default async function Home() {
               </p>
             </div>
             
-            <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 shadow-sm">
+            <Link href="/profile" className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 shadow-sm transition-transform active:scale-95">
                <div className="w-6 h-6 rounded-full bg-white text-[#B8860B] flex items-center justify-center font-bold text-xs shadow-inner">
                  {user?.fullName ? user.fullName[0].toUpperCase() : 'G'}
                </div>
@@ -41,7 +41,7 @@ export default async function Home() {
                  </p>
                  {user && <p className="text-white/90 text-[8px]">VIP</p>}
                </div>
-            </div>
+            </Link>
           </header>
 
           {/* Hero Content - Compact */}

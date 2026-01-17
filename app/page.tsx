@@ -2,6 +2,7 @@ import { getCurrentUser } from '@/lib/auth-utils';
 import PropertyCard from './components/PropertyCard';
 import { properties } from './data/properties';
 import Link from 'next/link';
+import AnnouncementPopup from './components/AnnouncementPopup';
 
 export default async function Home() {
   const user = await getCurrentUser();
@@ -123,6 +124,9 @@ export default async function Home() {
           ))}
         </div>
       </section>
+
+      {/* Welcome Announcement Popup */}
+      <AnnouncementPopup />
     </main>
   );
 }
